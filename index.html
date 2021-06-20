@@ -1,0 +1,238 @@
+<html>
+<head>
+	<title>AlgoVisor</title>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+	<script src="sketch.js" id="scrip"></script>
+	<link rel="stylesheet" 
+	href="style.css">
+	<link rel="stylesheet" 
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" 
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<!---navbar--->
+	<div id="nav-bar">
+		<nav class="navbar navbar-expand-lg navbar-light" id="navi">
+			<a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							SECUENCIALES
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="algo/insertion/index.html">Insertion Sort</a>
+							<a class="dropdown-item" href="algo/selection/index.html">Selection Sort</a>
+							<a class="dropdown-item" href="algo/mergesort/index.html">Merge Sort</a>
+							<a class="dropdown-item" href="algo/quicksort/index.html">Quick Sort</a>
+						</div>
+					</li>					
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							PARALELOS
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="algo/oddeven/index.html">Ordenación Par-Impar</a>
+							<a class="dropdown-item" href="algo/mergesortpara/index.html">Merge Sort Paralelo</a>
+							<a class="dropdown-item" href="algo/quicksortpara/index.html">Quick Sort Paralelo</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							ÁRBOLES
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="algo/binarysearch/index.html">Binario</a>
+							<a class="dropdown-item" href="algo/bfs/index.html">BFS</a>
+							<a class="dropdown-item" href="algo/dfs/index.html">DFS</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<div class="checkFloat">
+		<div class="rightFloat">
+			<div id=linia></div>
+			<h3>Bubble Sort</h3>
+			<div id="codigo">
+				<div id="codi1"><p>Bubble Sort(lista)</p></div>
+				<div id="codi2"><p>for i=0 hasta lista.tamaño - 1</p></div>
+				<div id="codi3"><p>for j=0 hasta lista.tamaño - 1 - i</p></div>
+				<div id="codi4"><p>if(lista[j] > lista[j+1])</p></div>
+				<div id="codi5"><p>intercambia(lista[j] y lista[j+1])</p></div>
+				<div id="codi6"><p></p></div>
+				<div id="codi7"><p></p></div>
+				<div id="codi8"><p></p></div>
+				<div id="codi9"><p></p></div>
+			</div>
+			<div id="explic">
+				<h2 id="frase1">Ordena los elementos de la lista</h2>
+				<h2 id="frase2">recorriendo y comparando todos</h2>
+				<h2 id="frase3">los elementos e intercambiando</h2>
+				<h2 id="frase4">los que tengan un mayor valor en</h2>
+				<h2 id="frase5">una posición menor.</h2>
+			</div>
+		</div>
+		<div class="leftFloat">
+			<div class="row">
+				<div id="lefbar">
+					<div id=linia></div>
+				</div>
+				<div id="rigbar">
+					<main>
+				    </main>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	
+    <div id="footer">
+    	<div class="row">
+    		<p id="lento">Rápido</p>
+    		<input type="range" min="2" max="60" value="30" class="slider" id="range">
+    		<p>Lento</p>
+    		<div class="btn-group" role="group" id="btngr">
+    			<button type="button" class="btn btn-outline-secondary" id="playbut" onclick="playPause()"><i class="fas fa-play"></i></button>
+    			<button type="button" class="btn btn-outline-secondary" onclick="stop()"><i class="fas fa-stop"></i></button>
+    			<button type="button" class="btn btn-outline-secondary" onclick="forwd()"><i class="fas fa-step-forward"></i></button>
+  			</div>
+  			<div class="btn-group dropup" id="crear">
+				<button type="button" class="btn btn-secondary" onclick="creacion()">
+					Crear Lista
+				</button>
+				<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="sr-only">Toggle Dropdown</span>
+				</button>
+				<div class="dropdown-menu">
+					<p>Introduce valores</p>
+					<p>separados por comas</p>
+					<input type="text" class="form-control" placeholder="Valores" aria-describedby="basic-addon2" id="inputCrear">
+				</div>
+			</div>
+    	</div>
+	</div>
+	<script type="text/javascript">
+		var playBut = document.getElementById("playbut");
+		var slider = document.getElementById("range");
+		var playpause = true;
+		slider.oninput = function(){
+			setVelo(this.value, this.value);
+		}
+
+		function playPause(){
+			if(playpause==true){
+				playBut.innerHTML = "<i class=\"fas fa-pause\"></i>";
+				playpause = false;
+			}
+			else{
+				playBut.innerHTML = "<i class=\"fas fa-play\"></i>";
+				playpause = true;
+			}
+			botonPlay();
+		}
+
+		function stop(){
+			reset();
+			document.getElementById("codi5").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi3").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi2").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi4").style.backgroundColor = '#F0E68C';
+		}
+
+		function forwd(){
+			botonforwd();
+		}
+
+		function parar(){
+			playPause();
+			document.getElementById("codi4").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi5").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi3").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi2").style.backgroundColor = '#F0E68C';
+		}
+
+		
+		function ejecIf(num1, num2){
+			document.getElementById("codi4").style.backgroundColor = '#ADFF2F';
+			document.getElementById("codi5").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi3").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi2").style.backgroundColor = '#F0E68C';
+			document.getElementById("frase3").innerHTML = "";
+			document.getElementById("frase5").innerHTML = "";
+			document.getElementById("frase1").innerHTML = "Compara el valor seleccionado " + num1 + " con";
+			document.getElementById("frase2").innerHTML = "el siguiente valor " + num2 + ".";
+			if(num1 > num2){
+				document.getElementById("frase4").innerHTML = "La comprobación es cierta.";
+			}
+			else{
+				document.getElementById("frase4").innerHTML = "La comprobación es falsa.";
+			}
+		}
+
+		function ejecInter(num1, num2){
+			document.getElementById("codi4").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi5").style.backgroundColor = '#ADFF2F';
+			document.getElementById("codi3").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi2").style.backgroundColor = '#F0E68C';
+			document.getElementById("frase3").innerHTML = "";
+			document.getElementById("frase2").innerHTML = "los intercambia";
+			document.getElementById("frase4").innerHTML = "";
+			document.getElementById("frase5").innerHTML = "";
+			document.getElementById("frase1").innerHTML = "Como " + num1 + " es mayor que " + num2;
+		}
+
+		function ejecFor1(){
+			document.getElementById("codi4").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi5").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi3").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi2").style.backgroundColor = '#ADFF2F';
+			document.getElementById("frase3").innerHTML = "";
+			document.getElementById("frase2").innerHTML = "vuelve al inicio.";
+			document.getElementById("frase4").innerHTML = "";
+			document.getElementById("frase5").innerHTML = "";
+			document.getElementById("frase1").innerHTML = "Una vez acabado el ciclo";
+		}
+
+		function ejecFor2(num1){
+			document.getElementById("codi4").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi5").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi2").style.backgroundColor = '#F0E68C';
+			document.getElementById("codi3").style.backgroundColor = '#ADFF2F';
+			document.getElementById("frase3").innerHTML = "";
+			document.getElementById("frase2").innerHTML = "";
+			document.getElementById("frase4").innerHTML = "";
+			document.getElementById("frase5").innerHTML = "";
+			document.getElementById("frase1").innerHTML = "Itera al siguiente valor: " + num1;
+		}
+
+		function creacion(){
+			var nums = document.getElementById("inputCrear").value;
+			var res = nums.split(",");
+			var list = [];
+			for(var i = 0; i < res.length; i++){
+				list[i] = parseInt(res[i],10);
+			}
+			crearLista(list, res.length);
+			console.log(res[0]);
+			console.log(res.length);
+		}
+		
+	</script>
+</body>
+</html>
